@@ -16,53 +16,49 @@ export const CreateUser = () => {
         dispatch(addUser())
         dispatch(setIsVisibleCreateUser(false))
     }
-    const changeName = (e) => {
-        const value = e.target.value;
-        dispatch(setUserName(value))
-    }
-    const changeUsername = (e) => {
-        const value = e.target.value;
-        dispatch(setUsername(value))
-    }
-    const changePhone = (e) => {
-        const value = e.target.value;
-        dispatch(setUserPhone(value))
-        dispatch(setUserPhone(''))
-    }
-    const changeEmail = (e) => {
-        const value = e.target.value;
-        dispatch(setUserEmail(value))
-    }
-    const changeWebsite = (e) => {
-        const value = e.target.value;
-        dispatch(setUserWebsite(value))
-    }
 
+    const changeUser = ({target: {name, value}}) => {
+        if (name === `name`) {
+            dispatch(setUserName(value))
+        }
+        if (name === `username`) {
+            dispatch(setUsername(value))
+        }
+        if (name === `email`) {
+            dispatch(setUserEmail(value))
+        }
+        if (name === `phone`) {
+            dispatch(setUserPhone(value))
+        }
+        if (name === `website`) {
+            dispatch(setUserWebsite(value))
+        }
+    };
 
     return (
         <>
             <h1>Create user menu : </h1>
             <div>
-                Name: <input type="text" value={name} onChange={(e) => changeName(e)}/>
+                Name: <input type="text" name={`name`} value={name} onChange={(e) => changeUser(e)}/>
             </div>
             <div>
-                UserName: <input type="text" value={username} onChange={(e) => {
-                changeUsername(e)
+                UserName: <input type="text" name={`username`} value={username} onChange={(e) => {
+                changeUser(e)
             }}/>
             </div>
             <div>
-                Email: <input type="text" value={email} onChange={(e) => {
-                changeEmail(e)
+                Email: <input type="text" name={`email`} value={email} onChange={(e) => {
+                changeUser(e)
             }}/>
             </div>
             <div>
-                Phone: <input type="text" value={phone} onChange={(e) => {
-                changePhone(e)
+                Phone: <input type="text" name={`phone`} value={phone} onChange={(e) => {
+                changeUser(e)
             }}/>
             </div>
             <div>
-                Website: <input type="text" value={website} onChange={(e) => {
-                changeWebsite(e)
+                Website: <input type="text" name={`website`} value={website} onChange={(e) => {
+                changeUser(e)
             }}/>
             </div>
             <button onClick={saveUser}>Create</button>

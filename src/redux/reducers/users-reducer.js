@@ -107,6 +107,8 @@ export default usersReducer;
 
 export const setUsers = (payload) => ({type: SET_USERS, payload});
 export const setUser = (payload) => ({type: SET_USER, payload});
+
+
 export const setIsVisibleFullUser = (payload) => ({type: SET_IS_VISIBLE_FULL_USER, payload});
 export const setIsVisibleEditUser = (payload) => ({type: SET_IS_VISIBLE_EDIT_USER, payload});
 export const setIsVisibleCreateUser = (payload) => ({type: SET_IS_VISIBLE_CREATE_USER, payload});
