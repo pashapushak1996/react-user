@@ -9,7 +9,6 @@ const SET_USER_PHONE = `SET_USER_PHONE`;
 const SET_USER_EMAIL = `SET_USER_EMAIL`;
 const SET_USER_WEBSITE = `SET_USER_WEBSITE`;
 const ADD_USER = `ADD_USER`;
-const EDIT_USER = `EDIT_USER`;
 
 
 const initialState = {
@@ -98,18 +97,6 @@ const usersReducer = (state = initialState, action) => {
                 users: [...state.users, newUser]
             }
         }
-        case EDIT_USER: {
-            return {
-                ...state, users: [state.users.map((user) => {
-                    if (user.id === action.payload.id) {
-                        return {
-                            ...user,
-                            name:state.name
-                        }
-                    }
-                })]
-            }
-        }
         default: {
             return state
         }
@@ -130,4 +117,6 @@ export const setUserPhone = (payload) => ({type: SET_USER_PHONE, payload});
 export const setUserEmail = (payload) => ({type: SET_USER_EMAIL, payload});
 export const setUserWebsite = (payload) => ({type: SET_USER_WEBSITE, payload});
 export const addUser = () => ({type: ADD_USER});
-export const editUser = (payload) => ({type: EDIT_USER, payload})
+
+
+

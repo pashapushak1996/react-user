@@ -14,17 +14,9 @@ export const User = ({name, id, phone, username, email}) => {
         dispatch(setUsers(newUsers))
         dispatch(setIsVisibleFullUser(false))
     }
-    const editUser = (id) => {
+    const editUser = () => {
         dispatch(setIsVisibleEditUser(true))
-        const editUsers = users.map((user) => {
-            if (user.id === id) {
-                return {
-                    ...user,
-
-                }
-            }
-        })
-
+        dispatch(setIsVisibleFullUser(false))
     }
 
     return (
