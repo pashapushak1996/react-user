@@ -11,8 +11,6 @@ export class UserService {
     async getUser(userId) {
         return await this.htmlClient.get(`${this.baseURL}/${userId}`)
     }
-    async deleteUser(userId){
-        return await this.htmlClient.delete(`${this.baseURL}/${userId}`)
-    }
+
 }
 
