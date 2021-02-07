@@ -22,11 +22,11 @@ export const User = ({name, id, phone, username, email}) => {
     return (
         <div>
             <h1>Full user info</h1>
-            <h6>{id}</h6>
-            <h6>{name}</h6>
-            <h6>{phone}</h6>
-            <h6>{username}</h6>
-            <h6>{email}</h6>
+            <h4>{id}</h4>
+            {name.length > 0 && <h4>Name: {name}</h4>}
+            {phone.length > 0 && <h4>Phone: {phone}</h4>}
+            {username.length > 0 && <h4>UserName: {username}</h4>}
+            {email.length > 0 && <h4>Email: {email}</h4>}
             <button onClick={() => editUser(id)}>Edit user</button>
             <button onClick={() => deleteUser(id)}>Delete user</button>
         </div>
