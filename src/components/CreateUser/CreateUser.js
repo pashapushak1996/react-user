@@ -1,7 +1,8 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {
-    addUser, setIsVisibleCreateUser,
+    addUser,
+    setIsVisibleCreateUser,
     setUserEmail,
     setUsername,
     setUserName,
@@ -15,23 +16,23 @@ export const CreateUser = () => {
     const saveUser = () => {
         dispatch(addUser())
         dispatch(setIsVisibleCreateUser(false))
-    }
+    };
 
     const changeUser = ({target: {name, value}}) => {
         if (name === `name`) {
-            dispatch(setUserName(value))
+            dispatch(setUserName(value));
         }
         if (name === `username`) {
-            dispatch(setUsername(value))
+            dispatch(setUsername(value));
         }
         if (name === `email`) {
-            dispatch(setUserEmail(value))
+            dispatch(setUserEmail(value));
         }
         if (name === `phone`) {
-            dispatch(setUserPhone(value))
+            dispatch(setUserPhone(value));
         }
         if (name === `website`) {
-            dispatch(setUserWebsite(value))
+            dispatch(setUserWebsite(value));
         }
     };
 
