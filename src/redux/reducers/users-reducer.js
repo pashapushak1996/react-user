@@ -94,7 +94,14 @@ const usersReducer = (state = initialState, action) => {
             }
             return {
                 ...state,
-                users: [...state.users, newUser]
+                users:
+                    state.name.length ||
+                    state.username.length ||
+                    state.email.length ||
+                    state.phone.length ||
+                    state.website.length
+                    <= 0 ? [...state.users]
+                        : [...state.users, newUser]
             }
         }
         default: {
@@ -117,6 +124,7 @@ export const setUserPhone = (payload) => ({type: SET_USER_PHONE, payload});
 export const setUserEmail = (payload) => ({type: SET_USER_EMAIL, payload});
 export const setUserWebsite = (payload) => ({type: SET_USER_WEBSITE, payload});
 export const addUser = () => ({type: ADD_USER});
+
 
 
 
