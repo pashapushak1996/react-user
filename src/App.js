@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {NavLink, Switch, Route} from "react-router-dom";
-import {Users} from "./components/Users/Users";
+import {Users} from "./components/UsersList/Users";
 import {services} from './services';
 import {setUsers} from "./redux/reducers/users-reducer";
 import {useDispatch, useSelector} from "react-redux";

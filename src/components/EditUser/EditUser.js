@@ -1,4 +1,4 @@
-import {setIsVisibleEditUser, setIsVisibleFullUser, setUsers} from "../redux/reducers/users-reducer";
+import {setIsVisibleEditUser, setIsVisibleFullUser, setUsers} from "../../redux/reducers/users-reducer";
 import {useDispatch, useSelector} from "react-redux";
 
 export const EditUser = ({id, name, username, phone, website, email}) => {

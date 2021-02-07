@@ -7,7 +7,7 @@ import {
     setUserName,
     setUserPhone,
     setUserWebsite
-} from "../redux/reducers/users-reducer";
+} from "../../redux/reducers/users-reducer";
 
 export const CreateUser = () => {
     const dispatch = useDispatch();

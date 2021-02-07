@@ -1,8 +1,8 @@
 import {User} from "../User/User";
 import {setIsVisibleCreateUser, setIsVisibleFullUser, setUser} from "../../redux/reducers/users-reducer";
 import {useDispatch, useSelector} from "react-redux";
-import {EditUser} from "../EditUser";
-import {CreateUser} from "../CreateUser";
+import {EditUser} from "../EditUser/EditUser";
+import {CreateUser} from "../CreateUser/CreateUser";
 
 export const Users = ({users}) => {
     const dispatch = useDispatch();
