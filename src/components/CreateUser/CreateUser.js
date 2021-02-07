@@ -11,8 +11,7 @@ import {
 
 export const CreateUser = () => {
     const dispatch = useDispatch();
-    let {name, username, phone, email, website} = useSelector(({users}) => users);
-
+    const {name, username, phone, email, website} = useSelector((state) => state);
     const saveUser = () => {
         dispatch(addUser())
         dispatch(setIsVisibleCreateUser(false))
@@ -28,6 +27,7 @@ export const CreateUser = () => {
     const changePhone = (e) => {
         const value = e.target.value;
         dispatch(setUserPhone(value))
+        dispatch(setUserPhone(''))
     }
     const changeEmail = (e) => {
         const value = e.target.value;

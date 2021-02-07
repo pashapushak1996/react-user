@@ -2,9 +2,8 @@ import {setIsVisibleEditUser, setIsVisibleFullUser, setUsers} from "../../redux/
 import {useDispatch, useSelector} from "react-redux";
 
 export const EditUser = ({id, name, username, phone, website, email}) => {
-
     const dispatch = useDispatch();
-    const {users} = useSelector(({users}) => users);
+    const {users} = useSelector((state) => state);
 
     const changeUser = (e, id) => {
         e.preventDefault();

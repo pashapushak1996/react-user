@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 const App = () => {
     const dispatch = useDispatch();
-    const users = useSelector(({users: {users}}) => users);
+    const {users} = useSelector((state)=>state);
 
     const {userService} = services;
     useEffect(() => {

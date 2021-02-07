@@ -5,7 +5,7 @@ import {setIsVisibleEditUser, setIsVisibleFullUser, setUsers} from "../../redux/
 export const User = ({name, id, phone, username, email}) => {
 
     const dispatch = useDispatch();
-    const {users} = useSelector(({users}) => users);
+    const {users} = useSelector((state) => state);
 
     const deleteUser = (id) => {
         const newUsers = users.filter((user) =>

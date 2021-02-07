@@ -68,7 +68,7 @@ const usersReducer = (state = initialState, action) => {
         case SET_USER_PHONE: {
             return {
                 ...state,
-                phone: action.payload
+                phone: action.payload,
             }
         }
         case SET_USER_EMAIL: {
@@ -80,7 +80,7 @@ const usersReducer = (state = initialState, action) => {
         case SET_USER_WEBSITE: {
             return {
                 ...state,
-                website: action.payload
+                website: action.payload,
             }
         }
         case ADD_USER: {
