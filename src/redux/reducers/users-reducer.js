@@ -94,14 +94,7 @@ const usersReducer = (state = initialState, action) => {
             }
             return {
                 ...state,
-                users:
-                    state.name.length ||
-                    state.username.length ||
-                    state.email.length ||
-                    state.phone.length ||
-                    state.website.length
-                    <= 0 ? [...state.users]
-                        : [...state.users, newUser]
+                users: [...state.users, newUser]
             }
         }
         default: {
