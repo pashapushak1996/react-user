@@ -12,7 +12,7 @@ const App = () => {
     const {userService} = services;
     useEffect(() => {
         userService.getUsers()
-            .then(res => res.json())
+            // .then(res => res.json())
             .then(data => dispatch(setUsers(data)))
     }, [])
 
