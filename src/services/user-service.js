@@ -4,12 +4,14 @@ export class UserService {
         this.baseURL = `https://jsonplaceholder.typicode.com/users`
     }
 
-    async getUsers() {
-        return await this.htmlClient.get(`${this.baseURL}`)
+    getUsers() {
+        return this.htmlClient.get(`${this.baseURL}`)
+            .then(res => res.json())
     }
 
-    async getUser(userId) {
-        return await this.htmlClient.get(`${this.baseURL}/${userId}`)
+    getUser(userId) {
+        return this.htmlClient.get(`${this.baseURL}/${userId}`)
+            .then(res => res.json())
     }
 
 }
